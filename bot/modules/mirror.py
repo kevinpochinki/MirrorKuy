@@ -138,7 +138,7 @@ class MirrorListener(listeners.MirrorListeners):
         with download_dict_lock:
             msg = f'<b>○ 🖥️ Filename : </b><code>{download_dict[self.uid].name()}</code>\n\n<b>○ 💾 Total Size : </b><code>{download_dict[self.uid].size()}</code>'
             buttons = button_build.ButtonMaker()
-            buttons.buildbutton("🇮🇩 𝗚-𝗗𝗥𝗜𝗩𝗘 𝗨𝗥𝗟", link)
+            buttons.buildbutton("🌍 𝗚-𝗗𝗥𝗜𝗩𝗘 𝗨𝗥𝗟", link)
             LOGGER.info(f'Done Uploading {download_dict[self.uid].name()}')
             if INDEX_URL is not None:
                 share_url = requests.utils.requote_uri(f'{INDEX_URL}/{download_dict[self.uid].name()}')
@@ -156,7 +156,7 @@ class MirrorListener(listeners.MirrorListeners):
             else:
                 uname = f'<a href="tg://user?id={self.message.from_user.id}">{self.message.from_user.first_name}</a>'
             if uname is not None:
-                msg += f'\n\n<b>○📡 Uploader:</b>👉 {uname}\n\n🔹#TerUpload Bossku 😁 ✔️\n\n⛔ 𝗗𝗢 𝗡𝗢𝗧 𝗦𝗛𝗔𝗥𝗘 𝗧𝗛𝗘 𝗜𝗡𝗗𝗘𝗫 𝗟𝗜𝗡𝗞 𝗔𝗡𝗬𝗪𝗛𝗘𝗥𝗘 𝗘𝗟𝗦𝗘!\n\n</b>'
+                msg += f'\n\n<b>○📡 Uploader:</b>👉 {uname}\n\n🔹#Uploaded To Team Drive ✔️\n\n⛔ 𝗗𝗢 𝗡𝗢𝗧 𝗦𝗛𝗔𝗥𝗘 𝗧𝗛𝗘 𝗜𝗡𝗗𝗘𝗫 𝗟𝗜𝗡𝗞 𝗔𝗡𝗬𝗪𝗛𝗘𝗥𝗘 𝗘𝗟𝗦𝗘!\n\n<b>🛡️𝗣𝗼𝘄𝗲𝗿𝗲𝗱 𝗕𝘆:: @topglobal_epep</b>'
             try:
                 fs_utils.clean_download(download_dict[self.uid].path())
             except FileNotFoundError:
